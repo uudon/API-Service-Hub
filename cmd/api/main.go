@@ -9,10 +9,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/multica/api-service-hub/internal/config"
-	"github.com/multica/api-service-hub/internal/handler"
-	"github.com/multica/api-service-hub/internal/middleware"
-	"github.com/multica/api-service-hub/pkg/logger"
+	"github.com/uudon/API-Service-Hub/internal/config"
+	"github.com/uudon/API-Service-Hub/internal/handler"
+	"github.com/uudon/API-Service-Hub/internal/middleware"
+	"github.com/uudon/API-Service-Hub/pkg/logger"
 	"github.com/rs/zerolog"
 )
 
