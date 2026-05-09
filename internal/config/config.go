@@ -79,6 +79,14 @@ func Load() (*Config, error) {
 		return nil, fmt.Errorf("failed to unmarshal config: %w", err)
 	}
 
+	// Parse log level
+	logLevelStr := viper.GetString("log_level")
+	logLevel, err := zerolog.ParseLevel(logLevelStr)
+	if err != nil {
+		return nil, fmt.Errorf("failed to parse log level: %w", err)
+	}
+	cfg.LogLevel = logLevel
+
 	// Set convenience fields
 	cfg.Port = cfg.Server.Port
 	cfg.ReadTimeout = int(cfg.Server.ReadTimeout.Seconds())
